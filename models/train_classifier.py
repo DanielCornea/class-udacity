@@ -44,6 +44,16 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """lowers and tokenizes the text
+        
+        Args:
+            text (str): text to be tokenized
+
+        Returns: 
+            (list): a list of tokens from the original text
+
+
+    """
     text = re.sub(r'[^0-9A-Za-z]'," ", text).lower()
     text = word_tokenize(text)
     return [w for w in text if not w in stop_words]
@@ -60,13 +70,6 @@ def build_model():
              pipeline (pipeline): the pipeline with specified parameteres
     
     """
-    # cv.best_params_
-#     params = {'clf__estimator__min_samples_split': 2,
-#               'clf__estimator__n_estimators': 200, 
-#               'tfidf__use_idf': True,
-#               'vect__max_df': 0.75,
-#               'vect__max_features': 5000,
-#               'vect__ngram_range': (1, 2)}
     
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize, max_df =  0.75, max_features = 5000, ngram_range = (1, 2))),
@@ -94,6 +97,13 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """Saves the model to the given filepath
+        
+        Args: 
+            model (pipeline): model to be saved
+            model_filepath (str): the filepath to where to save the model
+    
+    """
     joblib.dump(model, model_filepath)
 
 
