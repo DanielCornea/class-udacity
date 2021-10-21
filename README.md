@@ -1,1 +1,1 @@
-# class-udacity
+# Udacity-Project-classification
