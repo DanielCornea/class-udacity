@@ -11,16 +11,16 @@ The source of the messages is supposed to be twitter, the messages are supposed 
 be received during a natural disaster event.
 
 ## File Descriptions 
-APP:  
---TEMPLATES:  
----go.html and master.html contain the presentation html code for the browser  
---run.py contains the flask app and the code used to retrieve and present the data  
-DATA:  
---- .csv files contain the input data used for the ML algorithm   
---- DisasterResponse.db is the database used to store data  
---- process_data.py contains the code to clean and save the data to the DB   
-MODELS:   
---- train_classifier.py contains the ML algo code  
+APP:  <br />
+--TEMPLATES:  <br />
+---go.html and master.html contain the presentation html code for the browser  <br />
+--run.py contains the flask app and the code used to retrieve and present the data  <br />
+DATA:  <br />
+--- .csv files contain the input data used for the ML algorithm   <br />
+--- DisasterResponse.db is the database used to store data  <br />
+--- process_data.py contains the code to clean and save the data to the DB   <br />
+MODELS:   <br />
+--- train_classifier.py contains the ML algo code  <br />
 
 
 ## Running Instructions
